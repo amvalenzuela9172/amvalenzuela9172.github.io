@@ -1,228 +1,185 @@
-/* ─────────────────────────────────────────
-   BASE RESET & VARIABLES
-───────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
+/* ── Reset & Base ── */
+* {
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --color-text:       #222;
-  --color-muted:      #555;
-  --color-link:       #2563eb;
-  --color-link-hover: #1d4ed8;
-  --color-border:     #ddd;
-  --color-bg:         #fff;
-  --font-body:        Georgia, 'Times New Roman', serif;
-  --font-ui:          system-ui, -apple-system, sans-serif;
-  --max-width:        720px;
-  --spacing-section:  2.5rem;
-}
-
-/* ─────────────────────────────────────────
-   BODY & LAYOUT
-───────────────────────────────────────── */
-html {
-  font-size: 17px;
-  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
-  font-family:    var(--font-body);
-  color:          var(--color-text);
-  background:     var(--color-bg);
-  line-height:    1.75;
-  padding:        2rem 1.25rem 4rem;
-  max-width:      var(--max-width);
-  margin:         0 auto;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1a1a1a;
+  background-color: #fff;
+  line-height: 1.7;
 }
 
-/* ─────────────────────────────────────────
-   NAVIGATION
-───────────────────────────────────────── */
+/* ── Navigation ── */
 nav {
-  margin-bottom: 2.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-border);
-  font-family: var(--font-ui);
-  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
 }
 
-nav a {
-  margin-right:    1.5rem;
-  color:           var(--color-muted);
+.nav-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: Georgia, serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
   text-decoration: none;
-  transition:      color 0.2s;
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  font-family: Arial, sans-serif;
 }
 
-nav a:hover,
-nav a.active {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-/* ─────────────────────────────────────────
-   HEADINGS
-───────────────────────────────────────── */
-h1 {
-  font-size:     1.9rem;
-  font-weight:   700;
-  margin-bottom: 1rem;
-  line-height:   1.25;
-}
-
-h2 {
-  font-size:     1.5rem;
-  font-weight:   700;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 0.5rem;
-}
-
-h3 {
-  font-size:     1.1rem;
-  font-weight:   700;
-  margin-bottom: 1rem;
-  color:         var(--color-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-family:   var(--font-ui);
-}
-
-/* ─────────────────────────────────────────
-   PARAGRAPHS & TEXT
-───────────────────────────────────────── */
-p {
-  margin-bottom: 1rem;
-}
-
-a {
-  color:           var(--color-link);
-  text-decoration: none;
-}
-
-a:hover {
-  color:           var(--color-link-hover);
+.nav-links a:hover {
   text-decoration: underline;
 }
 
-strong {
-  font-weight: 700;
+.nav-links a.active {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-em {
-  font-style: italic;
+/* ── Red Separator Line ── */
+.nav-divider {
+  border: none;
+  height: 3px;
+  background-color: #796b6b;
+  margin: 0 0 50px 0;
+  width: 100%;
 }
 
-/* ─────────────────────────────────────────
-   BIO SECTION (home page)
-───────────────────────────────────────── */
+/* ── Main Content ── */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+
+/* ── Bio Section (photo + text side by side) ── */
 .bio {
-  margin-top: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
 }
 
-/* ─────────────────────────────────────────
-   CONTACT / LINKS ROW
-───────────────────────────────────────── */
+/* ── Profile Photo ── */
+.profile-photo img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── Bio Text ── */
+.bio-text {
+  flex: 1;
+}
+
+.bio-text h1 {
+  font-size: 2.6rem;
+  font-family: Georgia, serif;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.bio-text p {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: #1a1a1a;
+}
+
+.bio-text a {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.bio-text a:hover {
+  color: #cc0000;
+}
+
+/* ── Contact Links ── */
 .links {
-  display:        flex;
-  flex-wrap:      wrap;
-  gap:            0.5rem 1.25rem;
-  margin:         1.25rem 0;
-  font-family:    var(--font-ui);
-  font-size:      0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .links a {
-  color:           var(--color-muted);
   text-decoration: none;
-  border-bottom:   1px solid var(--color-border);
-  padding-bottom:  1px;
-  transition:      color 0.2s, border-color 0.2s;
+  color: #1a1a1a;
+  font-size: 1rem;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 1px;
 }
 
 .links a:hover {
-  color:        var(--color-link);
-  border-color: var(--color-link);
+  color: #cc0000;
+  border-color: #cc0000;
 }
 
-/* ─────────────────────────────────────────
-   LAST UPDATED LINE
-───────────────────────────────────────── */
+/* ── Last Updated ── */
 .updated {
-  font-size:   0.85rem;
-  color:       #999;
-  font-family: var(--font-ui);
-  margin-top:  1.5rem;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 16px;
 }
 
-/* ─────────────────────────────────────────
-   RESEARCH SECTIONS
-───────────────────────────────────────── */
-.research-section {
-  margin-bottom: var(--spacing-section);
-}
-
-.paper {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px dashed var(--color-border);
-}
-
-.paper:last-child {
-  border-bottom: none;
-}
-
-.paper-title {
-  font-weight:   600;
-  margin-bottom: 0.25rem;
-  font-size:     1rem;
-}
-
-.paper-meta {
-  font-size:     0.88rem;
-  color:         var(--color-muted);
-  font-family:   var(--font-ui);
-  margin-bottom: 0.4rem;
-}
-
-.paper-abstract {
-  font-size:   0.93rem;
-  color:       #444;
-  margin-bottom: 0;
-}
-
-/* ─────────────────────────────────────────
-   LISTS
-───────────────────────────────────────── */
-ul {
-  padding-left: 1.4rem;
-}
-
-ul li {
-  margin-bottom: 0.4rem;
-  font-size:     0.95rem;
-}
-
-/* ─────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────── */
+/* ── Footer ── */
 footer {
-  margin-top:    3rem;
-  padding-top:   1rem;
-  border-top:    1px solid var(--color-border);
-  font-size:     0.82rem;
-  color:         #aaa;
-  font-family:   var(--font-ui);
-  text-align:    center;
+  text-align: center;
+  padding: 30px;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 60px;
 }
 
-/* ─────────────────────────────────────────
-   RESPONSIVE — small screens
-───────────────────────────────────────── */
-@media (max-width: 540px) {
-  html   { font-size: 15px; }
-  h1     { font-size: 1.5rem; }
-  nav a  { margin-right: 0.9rem; }
+/* ── Responsive (Mobile) ── */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px 24px;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  main {
+    padding: 0 24px 40px;
+  }
+
+  .bio {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .profile-photo img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .bio-text h1 {
+    font-size: 2rem;
+  }
+
+  .links {
+    justify-content: center;
+  }
 }
