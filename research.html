@@ -3,89 +3,248 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research — Alejandro Medina</title>
+  <title>Research — Alejandro Medina Valenzuela</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+  <style>
+    /* ── Research-page specific styles ── */
 
+    /* Page title */
+    .page-title {
+      font-size: 2.6rem;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      margin-bottom: 36px;
+      color: #1a1a1a;
+    }
+
+    /* Section headings (Peer-review / Working papers / Report) */
+    .section-heading {
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #1a1a1a;
+      border-bottom: 3px solid #796b6b;
+      padding-bottom: 6px;
+      margin-top: 44px;
+      margin-bottom: 22px;
+    }
+
+    /* Publication list */
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Each publication entry */
+    .pub-entry {
+      padding: 12px 0 14px;
+      border-bottom: 1px solid #e8e8e4;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1a1a1a;
+    }
+    .pub-entry:last-child {
+      border-bottom: none;
+    }
+
+    /* Highlight author's own name */
+    .pub-entry strong {
+      font-weight: bold;
+    }
+
+    /* Italic journal / venue line */
+    .pub-venue {
+      font-style: italic;
+      color: #555;
+      font-size: 0.97rem;
+    }
+
+    /* Status badges */
+    .badge {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .badge-review {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffe08a;
+    }
+    .badge-published {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #b8dfc6;
+    }
+
+    /* Links inside pub entries */
+    .pub-entry a {
+      color: #1a1a1a;
+      text-decoration: underline;
+    }
+    .pub-entry a:hover {
+      color: #cc0000;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .page-title { font-size: 2rem; }
+      .section-heading { font-size: 0.95rem; }
+      .pub-entry { font-size: 0.97rem; }
+    }
+  </style>
+</head>
 <body>
 
   <!-- ── Navigation ── -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="research.html" class="active">Research</a>
-    <a href="studies.html">Studies</a>
-    <a href="cv.pdf" target="_blank">CV</a>
+    <span class="nav-name">Alejandro Medina</span>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="studies.html">Studies</a>
+      <!-- <a href="cv.pdf" target="_blank">CV</a> -->
+    </div>
   </nav>
+
+  <!-- Red separation line under nav -->
+  <hr class="nav-divider" />
 
   <!-- ── Main Content ── -->
   <main>
+    <h1 class="page-title">Research</h1>
 
-    <h2>Research</h2>
+    <!-- ══════════════════════════════════════
+         PEER-REVIEWED
+    ══════════════════════════════════════ -->
+    <h2 class="section-heading">Peer-Reviewed</h2>
+    <ul class="pub-list">
 
-    <!-- Working Papers -->
-    <section class="research-section">
-      <h3>Working Papers</h3>
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong> et al. (2026).
+        How much does climate resilient rural sanitation cost? Analysis of
+        life-cycle costs and their distribution in Champhone district, Lao PDR.
+        <span class="badge badge-review">Under Review</span>
+      </li>
 
-      <div class="paper">
-        <p class="paper-title">
-          <a href="papers/paper1.pdf" target="_blank">
-            Your Paper Title Goes Here
-          </a>
-        </p>
-        <p class="paper-meta">
-          With Co-Author Name. <em>Under review at Journal Name</em>, 2026.
-        </p>
-        <p class="paper-abstract">
-          Brief abstract of the paper. Describe the research question,
-          the data or method used, and the main finding in 2–3 sentences.
-        </p>
-      </div>
+      <li class="pub-entry">
+        Kohlitz, J., Geremew, A., Okurut, K., Poudel, P., Ghimire, A.,
+        Nijhawan, A., <strong>Medina Valenzuela, A.</strong>, Falletta, J.
+        et al. (2026).
+        What makes household sanitation systems resilient to floods?
+        Evidence from Ethiopia, Uganda, and Nepal.
+        <span class="badge badge-review">Under Review</span>
+      </li>
 
-      <div class="paper">
-        <p class="paper-title">
-          <a href="papers/paper2.pdf" target="_blank">
-            Another Working Paper Title
-          </a>
-        </p>
-        <p class="paper-meta">
-          Solo authored. <em>Draft available on request</em>, 2025.
-        </p>
-        <p class="paper-abstract">
-          Brief abstract of this paper.
-        </p>
-      </div>
-    </section>
+      <li class="pub-entry">
+        Poudel, P., Willetts, J., Kohlitz, J.,
+        <strong>Medina Valenzuela, A.</strong>, Dangol, S., Ghimire, A.,
+        Nijhawan, A., Manandhar Sherpa, A., Reddy, O., Geremew, A.,
+        Okurut, K., Sharma, S. and Howard, G. (2026).
+        'Climate resilience of onsite sanitation system in Nepal'.
+        <span class="badge badge-review">Under Review</span>
+      </li>
 
-    <!-- Published Papers -->
-    <section class="research-section">
-      <h3>Published Work</h3>
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong> (2016).
+        'Effects of the terms of trade on labour income inequality in Peru'.
+        <span class="pub-venue">Horizonte Económico</span>,
+        no.&nbsp;6, Universidad Nacional del Callao. Undergraduate thesis.
+        <span class="badge badge-published">Published</span>
+      </li>
 
-      <div class="paper">
-        <p class="paper-title">
-          <a href="https://doi.org/your-doi" target="_blank">
-            Published Paper Title
-          </a>
-        </p>
-        <p class="paper-meta">
-          <em>Journal of [Field]</em>, Vol. X, No. Y, pp. Z–ZZ, 2024.
-        </p>
-      </div>
-    </section>
+    </ul>
 
-    <!-- Work in Progress -->
-    <section class="research-section">
-      <h3>Work in Progress</h3>
-      <ul>
-        <li>Project title or topic — with Co-Author</li>
-        <li>Another project in progress</li>
-      </ul>
-    </section>
+    <!-- ══════════════════════════════════════
+         WORKING PAPERS
+    ══════════════════════════════════════ -->
+    <h2 class="section-heading">Working Papers</h2>
+    <ul class="pub-list">
+
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong> (2023).
+        Promoting development of low-carbon industries in natural
+        resource-rich countries: A case study of the lithium battery industry
+        in Australia, Chile and Bolivia.
+        <span class="pub-venue">Master thesis, University of Melbourne.</span>
+      </li>
+
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong> (2020).
+        The effect of government home visits (CUNA MAS) on iron consumption
+        and childhood anaemia. Impact evaluation.
+      </li>
+
+      <li class="pub-entry">
+        KIAT IAIP, Willetts, J., Kohlitz, J., Casey, L., Mills, F.,
+        <strong>Medina Valenzuela, A.</strong> (2026).
+        Technical Note: Methods for sanitation emissions measurement and
+        developing city and national sanitation emission estimates.
+      </li>
+
+    </ul>
+
+    <!-- ══════════════════════════════════════
+         REPORTS
+    ══════════════════════════════════════ -->
+    <h2 class="section-heading">Reports</h2>
+    <ul class="pub-list">
+
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong> et al. (2026).
+        Costing climate resilient rural sanitation in the Solomon Islands.
+        <span class="pub-venue">
+          Report prepared for UNICEF East Asia and the Pacific Regional Office.
+        </span>
+      </li>
+
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong>, Kumar, A. and Foster, T.
+        (2026). Lao PDR WASH Budget Brief.
+        <span class="pub-venue">
+          Report prepared for UNICEF Global WASH Practice.
+        </span>
+      </li>
+
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong> et al. (2025).
+        Financial analysis of five rural water schemes in Lao PDR.
+        <span class="pub-venue">
+          Report prepared for UNICEF East Asia and the Pacific Regional Office.
+        </span>
+      </li>
+
+      <li class="pub-entry">
+        <strong>Medina Valenzuela, A.</strong> (2018).
+        The impact of the Sierra Azul Fund on farmers (2014–2016).
+        Impact evaluation.
+      </li>
+
+      <li class="pub-entry">
+        Willetts, J., Rodgers, D., Kohlitz, J.,
+        <strong>Medina Valenzuela, A.</strong> (2024).
+        Determinants of community resilience to climate change and the
+        contribution of water, sanitation and hygiene.
+        <span class="pub-venue">Report to UNICEF.</span>
+      </li>
+
+    </ul>
 
   </main>
 
   <!-- ── Footer ── -->
   <footer>
-    <p>© 2026 Alejandro Medina Valenzuela</p>
+    <p>&copy; 2026 Alejandro Medina Valenzuela</p>
   </footer>
 
 </body>

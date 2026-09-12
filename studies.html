@@ -3,92 +3,462 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studies — Alejandro Medina</title>
+  <title>Studies — Alejandro Medina Valenzuela</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+  <style>
+    /* ── Page title ── */
+    .page-title {
+      font-size: 2.6rem;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
 
+    .page-subtitle {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 40px;
+      font-family: Georgia, serif;
+    }
+
+    /* ── Section headings ── */
+    .section-heading {
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #1a1a1a;
+      border-bottom: 3px solid #796b6b;
+      padding-bottom: 6px;
+      margin-top: 44px;
+      margin-bottom: 22px;
+    }
+
+    /* ── Qualifications ── */
+    .qual-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .qual-entry {
+      display: flex;
+      gap: 12px;
+      padding: 13px 0 15px;
+      border-bottom: 1px solid #e8e8e4;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1a1a1a;
+    }
+    .qual-entry:last-child {
+      border-bottom: none;
+    }
+
+    .qual-bullet {
+      flex-shrink: 0;
+      margin-top: 4px;
+      font-size: 1.1rem;
+      color: #796b6b;
+    }
+
+    .qual-body {
+      flex: 1;
+    }
+
+    .qual-degree {
+      font-family: Georgia, serif;
+      font-weight: bold;
+      color: #1a1a1a;
+    }
+
+    .qual-institution {
+      color: #444;
+    }
+
+    .qual-year {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 8px;
+      background: #f0ebe8;
+      color: #5a4a42;
+      border: 1px solid #d6cbc5;
+    }
+
+    .qual-honours {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 6px;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #b8dfc6;
+    }
+
+    /* ── Training entries ── */
+    .training-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .training-entry {
+      display: flex;
+      gap: 12px;
+      padding: 11px 0 13px;
+      border-bottom: 1px solid #e8e8e4;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1a1a1a;
+    }
+    .training-entry:last-child {
+      border-bottom: none;
+    }
+
+    .training-bullet {
+      flex-shrink: 0;
+      margin-top: 4px;
+      font-size: 1.1rem;
+      color: #796b6b;
+    }
+
+    .training-body {
+      flex: 1;
+    }
+
+    .training-name {
+      font-family: Georgia, serif;
+      font-weight: bold;
+    }
+
+    .training-provider {
+      color: #555;
+    }
+
+    .training-year {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 8px;
+      background: #f0ebe8;
+      color: #5a4a42;
+      border: 1px solid #d6cbc5;
+    }
+
+    /* ── Resources section ── */
+    .resource-category {
+      margin-bottom: 8px;
+    }
+
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .resource-entry {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0 12px;
+      border-bottom: 1px solid #e8e8e4;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1a1a1a;
+    }
+    .resource-entry:last-child {
+      border-bottom: none;
+    }
+
+    .resource-bullet {
+      flex-shrink: 0;
+      margin-top: 4px;
+      font-size: 1.1rem;
+      color: #796b6b;
+    }
+
+    .resource-entry a {
+      font-family: Georgia, serif;
+      font-weight: bold;
+      color: #1a1a1a;
+      text-decoration: underline;
+    }
+    .resource-entry a:hover {
+      color: #cc0000;
+    }
+
+    /* Sub-heading for resource groups */
+    .resource-group-title {
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #796b6b;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .page-title      { font-size: 2rem; }
+      .section-heading { font-size: 0.95rem; }
+      .qual-entry,
+      .training-entry,
+      .resource-entry  { font-size: 0.97rem; }
+    }
+  </style>
+</head>
 <body>
 
   <!-- ── Navigation ── -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="studies.html" class="active">Studies</a>
-    <a href="cv.pdf" target="_blank">CV</a>
+    <span class="nav-name">Alejandro Medina</span>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="studies.html">Studies</a>
+      <!-- <a href="cv.pdf" target="_blank">CV</a> -->
+    </div>
   </nav>
+
+  <!-- Brown/red separation line under nav -->
+  <hr class="nav-divider" />
 
   <!-- ── Main Content ── -->
   <main>
+    <h1 class="page-title">Studies</h1>
+    <p class="page-subtitle">
+      Academic background, professional training, and a curated collection
+      of resources I find useful for research in data science and development economics.
+    </p>
 
-    <h2>Studies</h2>
-    <p>A curated collection of Studies I find useful for research in data science.</p>
+    <!-- ══════════════════════════════════════
+         QUALIFICATIONS
+    ══════════════════════════════════════ -->
+    <h2 class="section-heading">Qualifications</h2>
+    <ul class="qual-list">
+
+      <li class="qual-entry">
+        <span class="qual-bullet">•</span>
+        <div class="qual-body">
+          <span class="qual-degree">Master of Development Studies</span>
+          <span class="qual-year">2023</span>
+          <span class="qual-honours">First Class Honours</span>
+          <br />
+          <span class="qual-institution">University of Melbourne</span>
+        </div>
+      </li>
+
+      <li class="qual-entry">
+        <span class="qual-bullet">•</span>
+        <div class="qual-body">
+          <span class="qual-degree">Bachelor / Licence of Economics</span>
+          <span class="qual-year">2016</span>
+          <span class="qual-honours">First Class Honours</span>
+          <br />
+          <span class="qual-institution">
+            Universidad Nacional Mayor de San Marcos (UNMSM)
+          </span>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- ══════════════════════════════════════
+         SPECIALISATION & TRAINING
+    ══════════════════════════════════════ -->
+    <h2 class="section-heading">Specialisation &amp; Training</h2>
+    <ul class="training-list">
+
+      <li class="training-entry">
+        <span class="training-bullet">•</span>
+        <div class="training-body">
+          <span class="training-name">Data Analysis for Social Scientists</span>
+          <span class="training-year">2016</span>
+          <br />
+          <span class="training-provider">
+            Massachusetts Institute of Technology (MIT)
+          </span>
+        </div>
+      </li>
+
+      <li class="training-entry">
+        <span class="training-bullet">•</span>
+        <div class="training-body">
+          <span class="training-name">
+            Specialisation in Applied Statistics
+          </span>
+          <span class="training-year">2015</span>
+          <br />
+          <span class="training-provider">
+            National School of Statistics and Informatics
+          </span>
+        </div>
+      </li>
+
+      <li class="training-entry">
+        <span class="training-bullet">•</span>
+        <div class="training-body">
+          <span class="training-name">Programming in SQL Server</span>
+          <span class="training-year">2019</span>
+          <br />
+          <span class="training-provider">
+            National University of Engineering
+          </span>
+        </div>
+      </li>
+
+      <li class="training-entry">
+        <span class="training-bullet">•</span>
+        <div class="training-body">
+          <span class="training-name">ArcGIS with Python</span>
+          <span class="training-year">2018</span>
+          <br />
+          <span class="training-provider">MasterSIG</span>
+        </div>
+      </li>
+
+      <li class="training-entry">
+        <span class="training-bullet">•</span>
+        <div class="training-body">
+          <span class="training-name">Spatial Econometrics in Stata 15</span>
+          <span class="training-year">2018</span>
+          <br />
+          <span class="training-provider">
+            Research and Economic Analysis — IMPACTO
+          </span>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- ══════════════════════════════════════
+         USEFUL RESOURCES
+    ══════════════════════════════════════ -->
+    <h2 class="section-heading">Useful Resources</h2>
 
     <!-- Data Science Tools -->
-    <section class="research-section">
-      <h3>Data Science Tools</h3>
-      <ul>
-        <li>
-          <a href="https://pandas.pydata.org/" target="_blank">pandas</a>
+    <p class="resource-group-title">Data Science Tools</p>
+    <ul class="resource-list">
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">pandas</a>
           — Data analysis and manipulation in Python.
-        </li>
-        <li>
-          <a href="https://scikit-learn.org/" target="_blank">scikit-learn</a>
+        </div>
+      </li>
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://scikit-learn.org/" target="_blank" rel="noopener noreferrer">scikit-learn</a>
           — Machine learning library for Python.
-        </li>
-        <li>
-          <a href="https://www.statsmodels.org/" target="_blank">statsmodels</a>
-          — Statistical modeling and econometrics in Python.
-        </li>
-        <li>
-          <a href="https://jupyter.org/" target="_blank">Jupyter</a>
+        </div>
+      </li>
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://www.statsmodels.org/" target="_blank" rel="noopener noreferrer">statsmodels</a>
+          — Statistical modelling and econometrics in Python.
+        </div>
+      </li>
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">Jupyter</a>
           — Interactive computing environments for data science.
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+
+    </ul>
 
     <!-- Research Methods -->
-    <section class="research-section">
-      <h3>Research Methods</h3>
-      <ul>
-        <li>
-          <a href="https://mixtape.scunning.com/" target="_blank">Causal Inference: The Mixtape</a>
+    <p class="resource-group-title">Research Methods</p>
+    <ul class="resource-list">
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://mixtape.scunning.com/" target="_blank" rel="noopener noreferrer">Causal Inference: The Mixtape</a>
           — Free online textbook on causal inference methods.
-        </li>
-        <li>
-          <a href="https://theeffectbook.net/" target="_blank">The Effect</a>
+        </div>
+      </li>
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://theeffectbook.net/" target="_blank" rel="noopener noreferrer">The Effect</a>
           — Research design for causal inference, freely available.
-        </li>
-        <li>
-          <a href="https://www.econometrics-with-r.org/" target="_blank">Econometrics with R</a>
+        </div>
+      </li>
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://www.econometrics-with-r.org/" target="_blank" rel="noopener noreferrer">Econometrics with R</a>
           — Free textbook combining econometrics and R.
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+
+    </ul>
 
     <!-- Writing & Productivity -->
-    <section class="research-section">
-      <h3>Writing & Productivity</h3>
-      <ul>
-        <li>
-          <a href="https://www.overleaf.com/" target="_blank">Overleaf</a>
+    <p class="resource-group-title">Writing &amp; Productivity</p>
+    <ul class="resource-list">
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://www.overleaf.com/" target="_blank" rel="noopener noreferrer">Overleaf</a>
           — Online LaTeX editor for academic writing.
-        </li>
-        <li>
-          <a href="https://zotero.org/" target="_blank">Zotero</a>
+        </div>
+      </li>
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://zotero.org/" target="_blank" rel="noopener noreferrer">Zotero</a>
           — Free reference manager and citation tool.
-        </li>
-        <li>
-          <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
-          — My preferred code editor, free and powerful.
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+
+      <li class="resource-entry">
+        <span class="resource-bullet">•</span>
+        <div>
+          <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a>
+          — Preferred code editor, free and powerful.
+        </div>
+      </li>
+
+    </ul>
 
   </main>
 
   <!-- ── Footer ── -->
   <footer>
-    <p>© 2026 Alejandro Medina Valenzuela</p>
+    <p>&copy; 2026 Alejandro Medina Valenzuela</p>
   </footer>
 
 </body>

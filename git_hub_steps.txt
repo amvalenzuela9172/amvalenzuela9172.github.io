@@ -1,0 +1,23 @@
+# 1. Initialize Git in your folder
+git init
+
+# 2. Connect your folder to your GitHub repo
+git remote add origin https://github.com/yourusername/yourusername.github.io.git
+
+# 3. Stage ALL your files (the dot means "everything")
+git add .
+
+# 4. Save a snapshot with a message
+git commit -m "Initial commit: add portfolio website"
+
+# 5. Push (upload) to GitHub
+git push -u origin main
+
+# After editing any file in VS Code, just run these 3 lines:
+git add .
+git commit -m "Update bio section"   # describe what you changed
+git push
+
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
