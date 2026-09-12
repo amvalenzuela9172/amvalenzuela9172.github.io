@@ -21,3 +21,12 @@ git push
 
     git config --global user.name "Your Name"
     git config --global user.email you@example.com
+
+# 1. Remove the old/ folder from git tracking (NOT from your computer)
+git rm -r --cached old/
+
+# 2. Commit the removal
+git commit -m "Remove old folder from tracking"
+
+# 3. Push to GitHub
+git push
